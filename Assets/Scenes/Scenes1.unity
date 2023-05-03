@@ -335,6 +335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  gravity: -9.8
+  jumpHeight: 1.5
 --- !u!114 &672456446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -753,7 +755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8578842291795906679, guid: d498aceb78e76d744aca75499f01a788, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 8578842291795906679, guid: d498aceb78e76d744aca75499f01a788, type: 3}
       propertyPath: m_LocalPosition.z
