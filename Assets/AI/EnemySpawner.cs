@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        spawnTimer += Time.deltaTime;
+        spawnTimer += Time.fixedDeltaTime;
 
         if (spawnTimer >= spawnInterval)
         {
@@ -25,6 +25,18 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
+        if (enemyPrefab == null)
+        {
+            Debug.LogError("Enemy prefab is not assigned.");
+            return;
+        }
+
+        if (spawnPoint == null)
+        {
+            Debug.LogError("Spawn point is not assigned.");
+            return;
+        }
+
         // Instantiate the enemy prefab at the spawn point
         GameObject enemyObject = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
 

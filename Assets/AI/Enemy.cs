@@ -69,12 +69,14 @@ public class Enemy : MonoBehaviour
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
+            
             Die();
         }
     }
 
     void Die()
     {
+        ScoreManager.Instance.Kill();
         Destroy(gameObject);
     }
 

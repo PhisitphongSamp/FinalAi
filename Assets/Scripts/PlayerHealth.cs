@@ -17,6 +17,8 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -81,6 +83,9 @@ public class PlayerHealth : MonoBehaviour
         Time.timeScale = 0f;
 
         Debug.Log("Game Over");
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
 
         OpenPanel();
     }

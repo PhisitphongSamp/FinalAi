@@ -26,9 +26,9 @@ public class Countdown : MonoBehaviour
             timeImage.fillAmount = Mathf.InverseLerp(0, duration, currentTime);
             timeText.text = currentTime.ToString();
             yield return new WaitForSeconds(1f);
-            currentTime--;
+            currentTime++;
         }
-        OpenPanel();
+        //OpenPanel();
     }
 
     void OpenPanel()
