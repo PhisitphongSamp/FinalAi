@@ -7,6 +7,8 @@ public class Gun : MonoBehaviour
     public GameObject BulletPlayer,flashMuzzle;
     public float nextFire = 0.0f;
     public float fireRate = 0.1f;
+    public AudioSource gunSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,7 @@ public class Gun : MonoBehaviour
         if(Input.GetMouseButton(1) && Time.time > nextFire){
             nextFire = Time.time + fireRate;
             Fire();
+            gunSound.Play();
             flashMuzzle.SetActive(true);
             StartCoroutine(HideMuzzle(0.12f));
         }
