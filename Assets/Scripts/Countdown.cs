@@ -28,7 +28,7 @@ public class Countdown : MonoBehaviour
             yield return new WaitForSeconds(1f);
             currentTime++;
         }
-        //OpenPanel();
+        OpenPanel();
     }
 
     void OpenPanel()
