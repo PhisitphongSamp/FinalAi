@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public float chipSpeed = 2f;
     public Image frontHealthBar;
     public Image backHealthBar;
+    [SerializeField] GameObject panel;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,11 @@ public class PlayerHealth : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             RestoreHealth(Random.Range(5, 10));
+        }
+
+        if (health <= 0)
+        {
+            GameOver();
         }
     }
     public void UpdateHealthUI()
@@ -68,5 +74,20 @@ public class PlayerHealth : MonoBehaviour
     {
         health += healAmount;
         lerpTimer = 0f;
+    }
+
+    private void GameOver()
+    {
+        Time.timeScale = 0f;
+
+        Debug.Log("Game Over");
+
+        OpenPanel();
+    }
+
+    void OpenPanel()
+    {
+        panel.SetActive(true);
+        Time.timeScale = 0f;
     }
 }
